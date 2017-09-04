@@ -13,7 +13,7 @@ web:
 hooks:
     build: |
         mkdir src
-        mv *.* src
+        mv * src
         cd src
         ls -la
         wget -qO- https://download.microsoft.com/download/E/7/8/E782433E-7737-4E6C-BFBF-290A0A81C3D7/dotnet-dev-debian-x64.1.0.4.tar.gz | tar xz
