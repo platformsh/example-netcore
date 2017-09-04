@@ -1,17 +1,20 @@
 name: app
-type: dnx
+
+type: php
+flavor: none
 
 relationships:
     database: "mysqldb:mysql"
 
 web:
-    commands:
-        start: 'ASPNETCORE_URLS="$SERVER_URL" .global/shared/Microsoft.NETCore.App/1.1.2/dotnet WebApplication1.dll'
     locations:
         "/":
+            allow: true
+            scripts: false
             passthru: true
             root: "wwwroot"
-            allow: true
+    commands:
+        start: 'WebApplication1.exe'
 
 hooks:
     build: |
@@ -23,7 +26,6 @@ hooks:
         ./dotnet publish -c Release
         cd ..
         mv src/WebApplication1/bin/Release/netcoreapp1.1/publish/*.* .
-        mv src/shared .global
         mv src/WebApplication1/wwwroot .
         rm -rf src
 
