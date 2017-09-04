@@ -6,7 +6,7 @@ relationships:
 
 web:
     commands:
-        start: "ASPNETCORE_URLS="$SERVER_URL" .global/shared/Microsoft.NETCore.App/1.1.2/dotnet WebApplication1.dll"
+        start: 'ASPNETCORE_URLS="$SERVER_URL" .global/shared/Microsoft.NETCore.App/1.1.2/dotnet WebApplication1.dll'
     locations:
     "/":
       passthru: true
