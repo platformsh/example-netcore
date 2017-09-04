@@ -19,8 +19,8 @@ hooks:
         ./dotnet restore
         ./dotnet publish -c Release
         cd ..
-        mv src/WebApplication1/bin/Release/netcoreapp1.1/publish/*.* ..
-        
+        mv src/WebApplication1/bin/Release/netcoreapp1.1/publish/*.* .
+        rm -rf src
 
 disk: 256
 
