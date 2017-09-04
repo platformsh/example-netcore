@@ -12,8 +12,8 @@ web:
             scripts: false
             passthru: true
             root: "wwwroot"
-    # commands:
-    #    start: './WebApplication1'
+    commands:
+        start: './WebApplication1'
 
 hooks:
     build: |
