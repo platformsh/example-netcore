@@ -20,9 +20,9 @@ hooks:
         wget -qO- https://download.microsoft.com/download/E/7/8/E782433E-7737-4E6C-BFBF-290A0A81C3D7/dotnet-dev-debian-x64.1.0.4.tar.gz | tar xz
         ./dotnet restore
         ./dotnet publish -c Release
-        ls -la WebApplication1/WebApplication1/bin/Release/netcoreapp1.1
+        ls -la WebApplication1/bin/Release/netcoreapp1.1
         cd ..
-        mv src/WebApplication1/WebApplication1/bin/Release/netcoreapp1.1/debian.8-x64/publish/*.* ..
+        mv src/WebApplication1/bin/Release/netcoreapp1.1/debian.8-x64/publish/*.* ..
         mv src/.global .
         mv src/.platform .
         rm -rf src
