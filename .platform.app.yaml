@@ -1,7 +1,6 @@
 name: app
 
-type: php
-flavor: none
+type: dnx
 
 relationships:
     database: "mysqldb:mysql"
