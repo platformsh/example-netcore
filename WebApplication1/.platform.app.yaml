@@ -1,0 +1,16 @@
+name: app
+type: dnx
+
+relationships:
+    database: "mysqldb:mysql"
+
+web:
+    locations:
+        "/":
+            root: 'public'
+            passthru: true
+
+disk: 256
+
+mounts:
+    "/storage": "shared:files/storage"
