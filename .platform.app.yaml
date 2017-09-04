@@ -12,8 +12,8 @@ web:
             scripts: false
             passthru: true
             root: "wwwroot"
-    commands:
-        start: './WebApplication1'
+    # commands:
+    #    start: './WebApplication1'
 
 hooks:
     build: |
@@ -24,7 +24,7 @@ hooks:
         ./dotnet restore
         ./dotnet publish -c Release -r debian.8-x64
         cd ..
-        mv src/WebApplication1/bin/Release/netcoreapp1.1/publish/*.* .
+        mv src/WebApplication1/bin/Release/netcoreapp1.1/debian.8-x64/publish/*.* .
         mv src/WebApplication1/wwwroot .
         rm -rf src
 
