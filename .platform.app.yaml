@@ -5,10 +5,8 @@ relationships:
     database: "mysqldb:mysql"
 
 web:
-    locations:
-        "/":
-            root: 'public'
-            passthru: true
+    commands:
+        start: ".global/shared/dotnet WebApplication1.dll"
 
 hooks:
     build: |
@@ -20,7 +18,9 @@ hooks:
         ./dotnet publish -c Release
         cd ..
         mv src/WebApplication1/bin/Release/netcoreapp1.1/publish/*.* .
+        mv src/shared .global
         rm -rf src
+
 
 disk: 256
 
