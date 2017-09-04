@@ -16,11 +16,10 @@ hooks:
         mv * src
         cd src
         wget -qO- https://download.microsoft.com/download/E/7/8/E782433E-7737-4E6C-BFBF-290A0A81C3D7/dotnet-dev-debian-x64.1.0.4.tar.gz | tar xz
-        ./dotnet restore -v Error
+        ./dotnet restore
         ./dotnet publish -c Release
         cd ..
         mv src/WebApplication1/bin/Release/netcoreapp1.1/publish/*.* ..
-        rm -rf src
         
 
 disk: 256
