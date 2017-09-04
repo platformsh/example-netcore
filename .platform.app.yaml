@@ -13,7 +13,7 @@ web:
             passthru: true
             root: "wwwroot"
     commands:
-        start: 'WebApplication1.exe'
+        start: './WebApplication1'
 
 hooks:
     build: |
@@ -22,7 +22,7 @@ hooks:
         cd src
         wget -qO- https://download.microsoft.com/download/E/7/8/E782433E-7737-4E6C-BFBF-290A0A81C3D7/dotnet-dev-debian-x64.1.0.4.tar.gz | tar xz
         ./dotnet restore
-        ./dotnet publish -c Release
+        ./dotnet publish -c Release -r debian.8-x64
         cd ..
         mv src/WebApplication1/bin/Release/netcoreapp1.1/publish/*.* .
         mv src/WebApplication1/wwwroot .
