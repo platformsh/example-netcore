@@ -17,7 +17,7 @@ web:
 
 hooks:
     build: |
-        DOTNET_CLI_TELEMETRY_OPTOUT=1 dotnet publish --output $PLATFORM_OUTPUT_DIRECTORY --verbose
+        DOTNET_CLI_TELEMETRY_OPTOUT=1 strace dotnet publish --runtime debian.8-x64 --output $PLATFORM_OUTPUT_DIRECTORY --verbose --self-contained=false
 
 disk: 256
 
