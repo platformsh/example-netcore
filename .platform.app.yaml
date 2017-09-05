@@ -1,6 +1,6 @@
 name: app
 
-type: dotnet
+type: dotnet:2.0-rc
 
 relationships:
     database: "mysqldb:mysql"
