@@ -17,6 +17,7 @@ web:
 
 hooks:
     build: |
+        dotnet --info
         dotnet restore
         dotnet publish --output "$OUTPUT_DIR"
 
