@@ -17,8 +17,8 @@ web:
 
 hooks:
     build: |
-        dotnet --info
-        dotnet publish --output "$OUTPUT_DIR"
+        export DOTNET_CLI_TELEMETRY_OPTOUT=1
+        dotnet publish --output "$PLATFORM_OUTPUT_DIRECTORY"
 
 disk: 256
 
