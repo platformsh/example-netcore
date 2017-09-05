@@ -1,6 +1,6 @@
 name: app
 
-type: dnx
+type: dotnet:2.0
 
 relationships:
     database: "mysqldb:mysql"
@@ -12,21 +12,13 @@ web:
             scripts: false
             passthru: true
             root: "wwwroot"
-    commands:
-        start: './WebApplication1'
+    # commands:
+    #    start: './WebApplication1'
 
 hooks:
     build: |
-        mkdir src
-        mv * src
-        cd src
-        wget -qO- https://download.microsoft.com/download/E/7/8/E782433E-7737-4E6C-BFBF-290A0A81C3D7/dotnet-dev-debian-x64.1.0.4.tar.gz | tar xz
-        ./dotnet restore
-        ./dotnet publish -c Release -r debian.8-x64
-        cd ..
-        mv src/WebApplication1/bin/Release/netcoreapp1.1/debian.8-x64/publish/* .
-        mv src/WebApplication1/wwwroot .
-        rm -rf src
+        dotnet restore
+        dotnet publish --output "$OUTPUT_DIR"
 
 disk: 256
 
