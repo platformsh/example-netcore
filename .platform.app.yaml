@@ -17,6 +17,7 @@ web:
 
 hooks:
     build: |
+        echo "Building application for $DOTNET_DEFAULT_RUNTIME into $PLATFORM_OUTPUT_DIR."
         dotnet publish --runtime "$DOTNET_DEFAULT_RUNTIME" --output "$PLATFORM_OUTPUT_DIR" --self-contained=false
 
 disk: 512
