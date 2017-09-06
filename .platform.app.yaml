@@ -17,7 +17,8 @@ web:
 
 hooks:
     build: |
-        DOTNET_CLI_TELEMETRY_OPTOUT=1 strace dotnet publish --runtime noruntime-x64 --self-contained --output $PLATFORM_OUTPUT_DIRECTORY
+        echo "Deploying to directory: $PLATFORM_OUTPUT_DIR"
+        DOTNET_CLI_TELEMETRY_OPTOUT=1 strace dotnet publish --runtime noruntime-x64 --self-contained --output "$PLATFORM_OUTPUT_DIR"
 
 disk: 256
 
