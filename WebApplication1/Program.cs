@@ -17,7 +17,7 @@ namespace WebApplication1
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .UseApplicationInsights()
-                .UseUrls("127.0.0.1:"+ (Environment.GetEnvironmentVariable("PORT") ?? "5000"))
+                .UseUrls("http://127.0.0.1:"+ (Environment.GetEnvironmentVariable("PORT") ?? "5000"))
                 .Build();
 
             host.Run();
