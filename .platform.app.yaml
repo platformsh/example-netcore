@@ -17,10 +17,9 @@ web:
 
 hooks:
     build: |
-        echo "Deploying to directory: $PLATFORM_OUTPUT_DIR"
-        DOTNET_CLI_TELEMETRY_OPTOUT=1 strace dotnet publish --runtime noruntime-x64 --self-contained --output "$PLATFORM_OUTPUT_DIR"
+        dotnet publish --runtime "$DOTNET_DEFAULT_RUNTIME" --output "$PLATFORM_OUTPUT_DIR" --self-contained=false
 
-disk: 256
+disk: 512
 
 mounts:
-    "/storage": "shared:files/storage"
+    "/wwwroot/etc": "shared:files/wwwroot/etc"
