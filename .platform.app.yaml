@@ -12,13 +12,12 @@ web:
             scripts: false
             passthru: true
             root: "wwwroot"
-    # commands:
-    #    start: './WebApplication1'
+    commands:
+        start: 'dotnet ./WebApplication1.dll'
 
 hooks:
     build: |
-        echo "Building application for $DOTNET_DEFAULT_RUNTIME into $PLATFORM_OUTPUT_DIR."
-        dotnet publish --runtime "$DOTNET_DEFAULT_RUNTIME" --output "$PLATFORM_OUTPUT_DIR" --self-contained=false
+        dotnet publish --runtime "$DOTNET_DEFAULT_RUNTIME" --output "$PLATFORM_OUTPUT_DIR" --self-contained
 
 disk: 512
 
